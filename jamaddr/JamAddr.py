@@ -2,7 +2,12 @@ import re
 
 
 def ip_to_bits(ip):
-    """Returns 32 bits when provided an IP"""
+    '''
+    Returns 32 bits when provided an IP
+    :param ip: str ("192.168.0.23")
+    :return: str ("11000000101010000000000000010111")
+    '''
+
     current = 1
     bits = ""
     octet = {}
@@ -26,8 +31,8 @@ def ip_to_bits(ip):
 def bits_to_ip(bits):
     '''
     Returns an IP when provided 32 bits
-    :param bits: str
-    :return: str
+    :param bits: str ("11000000101010000000000000010111")
+    :return: str ("192.168.0.23")
     '''
     value = 128
     current = 1
