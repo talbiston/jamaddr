@@ -2,6 +2,7 @@ import re
 
 
 def ip_to_bits(ip):
+
     '''
     Returns 32 bits when provided an IP
     :param ip: str ("192.168.0.23")
@@ -29,11 +30,13 @@ def ip_to_bits(ip):
 
 
 def bits_to_ip(bits):
+
     '''
     Returns an IP when provided 32 bits
     :param bits: str ("11000000101010000000000000010111")
     :return: str ("192.168.0.23")
     '''
+
     value = 128
     current = 1
     octet = {'1': '0', '2': '0', '3': '0', '4': '0'}
@@ -49,7 +52,13 @@ def bits_to_ip(bits):
 
 
 def ip_broadcastip(target, subnet):
-    """Returns the broadcast IP in a subnet."""
+    '''
+    Returns the broadcast IP in a subnet.
+    :param target:
+    :param subnet:
+    :return:
+    '''
+
     t_res = []
     net_res = []
     bc_res = []
@@ -64,7 +73,14 @@ def ip_broadcastip(target, subnet):
 
 
 def wc_compare(target, wc_net, wc_mask):
-    """Determines if a target IP exists in a wildcard network and mask."""
+    '''
+    Determines if a target IP exists in a wildcard network and mask.
+    :param target:
+    :param wc_net:
+    :param wc_mask:
+    :return:
+    '''
+
     t_res = []
     net_res = []
     mask_res = []
@@ -80,6 +96,12 @@ def wc_compare(target, wc_net, wc_mask):
 
 
 def network_id(ip_cidr):
+    '''
+    Determines the network ID of a given Ip with CIDR
+    :param ip_cidr: str ("192.168.0.23/24")
+    :return: str ("192.168.0.1/24")
+    '''
+
     ip, cidr = ip_cidr.split('/')
     ip_bits = ip_to_bits(ip)[:int(cidr)] + '0' * (32 - int(cidr))
     return '{}/{}'.format(bits_to_ip(ip_bits), cidr)
