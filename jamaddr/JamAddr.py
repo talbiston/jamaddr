@@ -24,7 +24,11 @@ def ip_to_bits(ip):
 
 
 def bits_to_ip(bits):
-    """Returns an IP when provided 32 bits"""
+    '''
+    Returns an IP when provided 32 bits
+    :param bits: str
+    :return: str
+    '''
     value = 128
     current = 1
     octet = {'1': '0', '2': '0', '3': '0', '4': '0'}
