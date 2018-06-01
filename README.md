@@ -21,3 +21,22 @@ bitsip
 ```
 
 returns = '192.168.0.23'
+
+Of course you could also enter a subnet mask to convert to bits then do the same with it corresponding IP to then
+work out what the network ID or Broadcast IPs would be or use your imagination on what other use cases could be.
+
+```python
+from jamaddr import JamAddr
+
+def network_id(ip_cidr):
+
+    ip, cidr = ip_cidr.split('/')
+    ip_bits = ip_to_bits(ip)[:int(cidr)] + '0' * (32 - int(cidr))
+    return '{}/{}'.format(bits_to_ip(ip_bits), cidr)
+
+networkID = JamAddr.network_id("192.168.0.23/28")
+print(networkID)
+```
+returns = 192.168.0.16/28
+
+
