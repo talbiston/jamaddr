@@ -54,9 +54,9 @@ def bits_to_ip(bits):
 def ip_broadcastip(target, subnet):
     '''
     Returns the broadcast IP in a subnet.
-    :param target:
-    :param subnet:
-    :return:
+    :param target: str (192.168.100.4)
+    :param subnet: str (255.255.224.0)
+    :return: str (192.168.127.255)
     '''
 
     t_res = []
