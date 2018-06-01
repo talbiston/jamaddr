@@ -22,7 +22,7 @@ bitsip
 returns = '192.168.0.23'
 ```
 
-Of course you could also enter a subnet mask to convert to bits then do the same with it corresponding IP to then
+Of course you could also enter a subnet mask to convert to bits then do the same with its corresponding IP, then
 work out what the network ID or Broadcast IPs would be or use your imagination on what other use cases could be.
 
 ```python
